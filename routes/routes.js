@@ -53,7 +53,7 @@ router.get('/', function(req,res){
 //route pour Partenaire
 .get('/Partenaire', function(req,res){
 	//si co 
-	res.render('partenaires.ejs')
+	res.render('partenaire.ejs')
 	//sinon
 	res.render('connexion.ejs')
 })
