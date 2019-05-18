@@ -7,6 +7,8 @@ drop table if exists sport;
 drop table if exists clubsport;
 drop table if exists ville;
 
+SET NAMES 'utf8';
+
 create table Ville(				idVille smallint not null,
 								nomVille VARCHAR(50) not null,
 								constraint cp_ville Primary Key (idVille)
@@ -15,7 +17,7 @@ create table Ville(				idVille smallint not null,
 
 create table ClubSport(			idCS smallint not null,
 								nomCS VARCHAR(50) not null,
-								descCS TEXT,
+								descCS VARCHAR(280),
 								adr1CS integer not null,
 								adr2CS VARCHAR(50) not null,
 								cpCS integer not null,
@@ -26,7 +28,6 @@ create table ClubSport(			idCS smallint not null,
 
 create table Sport(				idSport smallint not null,
 								nomS VARCHAR(30) not null,
-								desS text,
 								constraint cp_sport Primary Key (idSport)
 );
 
@@ -59,9 +60,11 @@ create table Pratiquer(			idUser smallint not null,
 
 create table Partenariat(		idUser1 smallint not null,
 								idUser2 smallint not null,
-								constraint cp_partenariat primary key (idUser1,idUser2),
+								idSport smallint not null,
+								constraint cp_partenariat primary key (idUser1,idUser2, idSport),
 								constraint ce1_partenariat FOREIGN KEY (idUser1) REFERENCES Utilisateur(idUser),
-								constraint ce2_partenariat FOREIGN KEY (idUser2) REFERENCES Utilisateur(idUser)
+								constraint ce2_partenariat FOREIGN KEY (idUser2) REFERENCES Utilisateur(idUser),
+								constraint ce3_partenariat FOREIGN KEY (idSport) REFERENCES Sport(idSport)
 );
 
 

@@ -14,155 +14,81 @@
 
                 <!---->
     
-    <!---->
-    <!--Overlay-->
-    
-    <!--Container-->
-    <div class="container">
-        <div class="row">
-            <!--Titles-->
-            <div class="title col-12">
-                <h2 class="align-left mbr-fonts-style m-0 display-1">
-                    Evenement
-                </h2>
+                <!---->
+                <!--Overlay-->
                 
-            </div>
-            <div class="container">
-                            <p>
-                                Sélectionnez des villes et/ou sports pour affiner votre recherche
-                            </p>
-                            <div class="row justify-content-between">
-                                <div class="col-4">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Selectionnez une Ville
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Ville1</a>
-                                            <a class="dropdown-item" href="#">Ville2</a>
-                                            <a class="dropdown-item" href="#">Ville3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Sélectionnez un Sport
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Sport1</a>
-                                            <a class="dropdown-item" href="#">Sport2</a>
-                                            <a class="dropdown-item" href="#">Sport3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                                
+                <!--Container-->
+                <div class="container">
+                    <div class="row">
+                        <!--Titles-->
+                        <div class="title col-12">
+                            <h2 class="align-left mbr-fonts-style m-0 display-1">
+                                Evenement
+                            </h2>
+                            
                         </div>
-            <!--Card-1-->
-            <div class="card col-12 pb-5">
-                <div class="card-wrapper media-container-row media-container-row">
-                    <div class="card-box">
-                        <div class="row">
-                            <div class="col-12 col-md-2">
-                                <!--Image-->
-                                <div class="mbr-figure">
-                                    <img src="assets/images/product1.jpg" alt="Mobirise">
+                        <% if(event.length > 0) {%>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6  form-group" data-for="ville">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">
+                                            Sélectionner une Ville
+                                        </label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <% for(var i=0; i<ville.length; i++) {%>
+                                                <option>
+                                                    <%= ville[i].nomVille %>
+                                                </option>
+                                            <%} %>
+                                        </select>
+                                    </div>
                                 </div>
+                                <div class="col-md-6  form-group" data-for="sport">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">
+                                            Sélectionner un Sport
+                                        </label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <% for(var i=0; i<sport.length; i++) {%>
+                                                <option>
+                                                    <%= sport[i].nomS %>
+                                                </option>
+                                            <%} %>
+                                        </select>
+                                    </div>
+                                </div>  
                             </div>
-                            <div class="col-12 col-md-10">
-                                <div class="wrapper">
+                        </div>  
+                        <% for(var i=0; i<event.length; i++) { %>
+                        <!--Card-i-->
+                        <div class="card px-3 col-12">
+                            <div class="card-wrapper media-container-row media-container-row">
+                                <div class="card-box">
                                     <div class="top-line pb-3">
                                         <h4 class="card-title mbr-fonts-style display-5">
-                                            Watch 1
+                                            <%= event[i].nomEvent %>
                                         </h4>
                                         <p class="mbr-text cost mbr-fonts-style m-0 display-5">
-                                            $400
+                                            <%= event[i].dateEvent %>
                                         </p>
                                     </div>
                                     <div class="bottom-line">
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                        </p>
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                            <%= event[i].descEvent %>
+                                    </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <% } %>
+                        <% } else { %>
+                        <p>
+                            Nous avons pas trouvés d'événement correspondant à votre recherche
+                        </p>
+                        <% } %>
                     </div>
-                </div>
-            </div>
-            <!--Card-2-->
-            <div class="card col-12 pb-5">
-                <div class="card-wrapper media-container-row media-container-row">
-                    <div class="card-box">
-                        <div class="row">
-                            <div class="col-12 col-md-2">
-                                <!--Image-->
-                                <div class="mbr-figure">
-                                    <img src="assets/images/product1.jpg" alt="Mobirise">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-10">
-                                <div class="wrapper">
-                                    <div class="top-line pb-3">
-                                        <h4 class="card-title mbr-fonts-style display-5">
-                                            Watch 2
-                                        </h4>
-                                        <p class="mbr-text cost mbr-fonts-style m-0 display-5">
-                                            $400
-                                        </p>
-                                    </div>
-                                    <div class="bottom-line">
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Card-3-->
-            <div class="card col-12">
-                <div class="card-wrapper media-container-row media-container-row">
-                    <div class="card-box">
-                        <div class="row">
-                            <div class="col-12 col-md-2">
-                                <!--Image-->
-                                <div class="mbr-figure">
-                                    <img src="assets/images/product1.jpg" alt="Mobirise">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-10">
-                                <div class="wrapper">
-                                    <div class="top-line pb-3">
-                                        <h4 class="card-title mbr-fonts-style display-5">
-                                            Watch 3
-                                        </h4>
-                                        <p class="mbr-text cost mbr-fonts-style m-0 display-5">
-                                            $400
-                                        </p>
-                                    </div>
-                                    <div class="bottom-line">
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, odit?
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Card-4-->
-            
-            <!--Card-5-->
-            
-            <!--Card-6-->
-            
-        </div>
-    </div>
-</section>
+                    </section>
 
             <% include ./../models/Partiel/footer %>
 
