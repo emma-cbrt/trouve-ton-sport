@@ -7,7 +7,6 @@ drop table if exists sport;
 drop table if exists clubsport;
 drop table if exists ville;
 
-SET NAMES 'utf8';
 
 create table Ville(				idVille smallint not null,
 								nomVille VARCHAR(50) not null,
@@ -39,15 +38,14 @@ create table Proposer(			idCS smallint not null,
 );
 
 
-create table Utilisateur(		idUser smallint not null,
+create table Utilisateur(		idUser smallint not null auto_increment,
 								nomUser VARCHAR(50) not null,
 								prenomUser VARCHAR(50) not null,
-								sexeUser varchar(1) not null,
 								telUser varchar(10) not null,
 								emailUser varchar(60) not null,
 								mdpUser varchar(60) not null,
 								idVille smallint not null,
-								constraint cp_utilisateur primary key (idUser),
+								constraint cp_utilisateur primary key (idUser, emailUser),
 								constraint ce1_utilisateur FOREIGN KEY (idVille) REFERENCES Ville(idVille)
 );
 
@@ -56,15 +54,6 @@ create table Pratiquer(			idUser smallint not null,
 								constraint cp_pratiquer primary key (idUser,idSport),
 								constraint ce1_pratiquer FOREIGN KEY (idUser) REFERENCES Utilisateur(idUser),
 								constraint ce2_pratiquer FOREIGN KEY (idSport) REFERENCES Sport(idSport)
-);
-
-create table Partenariat(		idUser1 smallint not null,
-								idUser2 smallint not null,
-								idSport smallint not null,
-								constraint cp_partenariat primary key (idUser1,idUser2, idSport),
-								constraint ce1_partenariat FOREIGN KEY (idUser1) REFERENCES Utilisateur(idUser),
-								constraint ce2_partenariat FOREIGN KEY (idUser2) REFERENCES Utilisateur(idUser),
-								constraint ce3_partenariat FOREIGN KEY (idSport) REFERENCES Sport(idSport)
 );
 
 

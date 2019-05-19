@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+    <!-- Annonce la langue du document -->
+    <html lang="fr">
+        <head>
+            <% include ./../models/Partiel/head %>
+        </head>
+
+
+        <body>
+
+            <% include ./../models/Partiel/navbar %>
+
+            <section class="engine">
+            </section>
+            <section class="services5 cid-rqAcxjsmG7" id="services5-d">
+
+                  <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="title col-12 col-lg-8">
+                                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+                                    Inscription
+                                </h2>
+                                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
+                                    Veuillez selectionner vos sport
+                                </h3>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="media-container-column col-lg-8" data-form-type="formoid">
+                                <!---Formbuilder Form--->
+                                <form action="/Inscription" method="POST">
+                                    <div class="dragArea row row-sm-offset">
+
+                                        <div class="col-md-12  form-group" data-for="email">
+                                            <% for(var i=0; i<sport.length; i++) {%>
+
+                                            <label for="email-form1-g" class="form-control-label mbr-fonts-style display-7">                                           
+                                                <%= sport[i].nomSport %>
+                                            </label>
+                                            <input type="checkbox">
+                                        </div>
+                                        <div class="col-md-12 input-group-btn align-center">
+                                            <button type="submit" class="btn  btn-secondary display-4">OK</button>
+                                        </div>
+                                    </div>
+                                </form><!---Formbuilder Form--->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <% include ./../models/Partiel/footer %>
+            
+           
+            <script src="assets/web/assets/jquery/jquery.min.js"></script>
+            <script src="assets/popper/popper.min.js"></script>
+            <script src="assets/tether/tether.min.js"></script>
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="assets/smoothscroll/smooth-scroll.js"></script>
+            <script src="assets/dropdown/js/script.min.js"></script>
+            <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+            <script src="assets/theme/js/script.js"></script>
+        </body>
+    </html>

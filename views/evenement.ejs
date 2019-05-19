@@ -19,14 +19,23 @@
                 
                 <!--Container-->
                 <div class="container">
-                    <div class="row">
+                    <div class="row justify-content-between">
                         <!--Titles-->
-                        <div class="title col-12">
+                        <div class="col-4">
                             <h2 class="align-left mbr-fonts-style m-0 display-1">
                                 Evenement
                             </h2>
                             
                         </div>
+                    
+                    
+                        <div class="title col-4">
+                            <!-- TODO CACHER LE BOUTON SI PAS CONNECTE -->
+                            <a href="/AjoutEvenement" target="_blank">
+                            <button type="button" class="btn  btn-secondary display-4">Ajouter un Evenement</button>
+                        </div>
+                    </div>
+                    <div class="row">
                         <% if(event.length > 0) {%>
                         <div class="container">
                             <div class="row">
@@ -36,9 +45,9 @@
                                             Sélectionner une Ville
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <% for(var i=0; i<ville.length; i++) {%>
+                                            <% for(var i=0; i<event.length; i++) {%>
                                                 <option>
-                                                    <%= ville[i].nomVille %>
+                                                    <%= event[i].nomVille %>
                                                 </option>
                                             <%} %>
                                         </select>
@@ -50,9 +59,9 @@
                                             Sélectionner un Sport
                                         </label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <% for(var i=0; i<sport.length; i++) {%>
+                                            <% for(var i=0; i<event.length; i++) {%>
                                                 <option>
-                                                    <%= sport[i].nomS %>
+                                                    <%= event[i].nomS %>
                                                 </option>
                                             <%} %>
                                         </select>
