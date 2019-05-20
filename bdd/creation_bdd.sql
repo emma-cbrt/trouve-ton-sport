@@ -8,33 +8,33 @@ drop table if exists clubsport;
 drop table if exists ville;
 
 
-create table Ville(				idVille smallint not null,
-								nomVille VARCHAR(50) not null,
-								constraint cp_ville Primary Key (idVille)
+create table Ville(idVille smallint not null,
+nomVille VARCHAR(50) not null,
+constraint cp_ville Primary Key (idVille)
 );
 
 
-create table ClubSport(			idCS smallint not null,
-								nomCS VARCHAR(50) not null,
-								descCS VARCHAR(280),
-								adr1CS integer not null,
-								adr2CS VARCHAR(50) not null,
-								cpCS integer not null,
-								idVille smallint not null,
-								constraint cp_CS Primary Key (idCS),
-								constraint ce_CS FOREIGN key (idVille) references Ville(idVille)
+create table ClubSport(idCS smallint not null,
+nomCS VARCHAR(50) not null,
+descCS VARCHAR(280),
+adr1CS integer not null,
+adr2CS VARCHAR(50) not null,
+cpCS integer not null,
+idVille smallint not null,
+constraint cp_CS Primary Key (idCS),
+constraint ce_CS FOREIGN key (idVille) references Ville(idVille)
 );
 
-create table Sport(				idSport smallint not null,
-								nomS VARCHAR(30) not null,
-								constraint cp_sport Primary Key (idSport)
+create table Sport(idSport smallint not null,
+nomS VARCHAR(30) not null,
+constraint cp_sport Primary Key (idSport)
 );
 
-create table Proposer(			idCS smallint not null,
-								idSport smallint not null,
-								constraint cp_proposer Primary Key (idCS,idSport),
-								constraint ce1_proposer FOREIGN KEY (idCS) REFERENCES ClubSport(idCS),
-								constraint ce2_proposer FOREIGN KEY (idSport) REFERENCES Sport(idSport)
+create table Proposer(idCS smallint not null,
+idSport smallint not null,
+constraint cp_proposer Primary Key (idCS,idSport),
+constraint ce1_proposer FOREIGN KEY (idCS) REFERENCES ClubSport(idCS),
+constraint ce2_proposer FOREIGN KEY (idSport) REFERENCES Sport(idSport)
 );
 
 
@@ -69,3 +69,7 @@ create table Evenement(			idEvent smallint not null,
 								constraint ce2_event FOREIGN KEY (idVille) REFERENCES Ville(idVille),
 								constraint ce3_event FOREIGN KEY (idUser) REFERENCES Utilisateur(idUser)
 );
+
+CREATE TRIGGER after_suppr_user AFTER DELETE
+ON Utilisateur FOR EACH ROW
+corps_trigger;

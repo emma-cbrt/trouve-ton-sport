@@ -1,27 +1,26 @@
 alter session set nls_date_format = 'DD/MM/YYYY';
-delete from evenement;
-delete from partenariat;
-delete from pratiquer;
-delete from utilisateur;
-delete from proposer;
-delete from sport;
-delete from clubsport;
-delete from ville;
+delete from Evenement;
+delete from Pratiquer;
+delete from Utilisateur;
+delete from Proposer;
+delete from Sport;
+delete from ClubSport;
+delete from Ville;
 
 
-insert into ville values (1,'Montpellier');
-insert into ville values (2,'Marseille');
-insert into ville values (3,'Grenoble');
-insert into ville values (4,'Bordeaux');
+insert into Ville values (1,'Montpellier');
+insert into Ville values (2,'Marseille');
+insert into Ville values (3,'Grenoble');
+insert into Ville values (4,'Bordeaux');
 
-insert into clubsport values (1,'Set Club','Le set club est un complexe sportif qui ravira les petits et les grands pour son grand nombre d\'activités proposées.',17,'rue de la charrue', 34090, 1);
-insert into clubsport values (2,'KeepCool','Salle de sport proposant un nombre important de machine, pour les débutant comme les accros de la muscu!',34,'boulevard Flemming',33000, 4);
-insert into clubsport values (3,'ClubFitness','Club de fitness avec des coatch hyper qualifiés qui te proposeront des entraînement adaptés',3,'boulevard philippon', 13004,2);
-insert into clubsport values (4,'Piscine Olympique d\'Antigone','Piscine Olympique',195,'Avenue Jacques Cartier',34000,1);
-insert into clubsport values (5,'SurfsurMars','Cours et location de planche à voile, canoë, etc',91,'Promenade Georges Pompidou', 13008,2);
-insert into clubsport values (6,'Club Escalade Jean Perrin','Club familial qui propose des sorties escalade dans des recoins peu connus, Vues à couper le souffle!',14,'rue du commandant perreau',38100, 3);
-insert into clubsport values (7,'Ski\'Gre','Cours et possibilités de faire du hors-piste avec des guides pour les adeptes des sensations fortes!',32,'Avenue du 8 Mai 1945',38400, 3);
-insert into clubsport values (8,'Wave Surf','Cours de surf dans un cadre magnifique vers la dune du pila, transport du club à la plage pris en charge',18,'Rue des Menuts', 38200, 4);
+insert into ClubSport values (1,'Set Club','Le set Club est un complexe sportif qui ravira les petits et les grands pour son grand nombre d activités Proposées.',17,'rue de la charrue', 34090, 1);
+insert into ClubSport values (2,'KeepCool','Salle de sport Proposant un nombre important de machine, pour les débutant comme les accros de la muscu!',34,'boulevard Flemming',33000, 4);
+insert into ClubSport values (3,'ClubSitness','Club de fitness avec des coatch hyper qualifiés qui te Proposeront des entraînement adaptés',3,'boulevard philippon', 13004,2);
+insert into ClubSport values (4,'Piscine Olympique d Antigone','Piscine Olympique',195,'Avenue Jacques Cartier',34000,1);
+insert into ClubSport values (5,'SurfsurMars','Cours et location de planche à voile, canoë, etc',91,'Promenade Georges Pompidou', 13008,2);
+insert into ClubSport values (6,'Club Escalade Jean Perrin','Club familial qui Propose des sorties escalade dans des recoins peu connus, Vues à couper le souffle!',14,'rue du commandant perreau',38100, 3);
+insert into ClubSport values (7,'SkiGre','Cours et possibilités de faire du hors-piste avec des guides pour les adeptes des sensations fortes!',32,'Avenue du 8 Mai 1945',38400, 3);
+insert into ClubSport values (8,'Wave Surf','Cours de surf dans un cadre magnifique vers la dune du pila, transport du ClubSà la plage pris en charge',18,'Rue des Menuts', 38200, 4);
 
 insert into Sport values(1, 'Squash');
 insert into Sport values(2, 'Tennis');
@@ -41,23 +40,23 @@ insert into sport values (15, 'Fitness');
 insert into sport values (16, 'Surf');	
 
 
-insert into proposer values (1,1);
-insert into proposer values (1,2);
-insert into proposer values (1,3);
-insert into proposer values (1,5);
-insert into proposer values (1,6);
-insert into proposer values (1,9);
-insert into proposer values (2,6);
-insert into proposer values (3,6);
-insert into proposer values (3,15);
-insert into proposer values (4,5);
-insert into proposer values (5,10);
-insert into proposer values (5,11);
-insert into proposer values (5,16);
-insert into proposer values (6,12);
-insert into proposer values (7,13);
-insert into proposer values (7,14);
-insert into proposer values (8,16);
+insert into Proposer values (1,1);
+insert into Proposer values (1,2);
+insert into Proposer values (1,3);
+insert into Proposer values (1,5);
+insert into Proposer values (1,6);
+insert into Proposer values (1,9);
+insert into Proposer values (2,6);
+insert into Proposer values (3,6);
+insert into Proposer values (3,15);
+insert into Proposer values (4,5);
+insert into Proposer values (5,10);
+insert into Proposer values (5,11);
+insert into Proposer values (5,16);
+insert into Proposer values (6,12);
+insert into Proposer values (7,13);
+insert into Proposer values (7,14);
+insert into Proposer values (8,16);
 
 
 commit;
